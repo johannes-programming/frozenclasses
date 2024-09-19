@@ -2,10 +2,15 @@
 frozenclasses
 =============
 
+Overview
+--------
+
+frozenclasses
+
 Installation
 ------------
 
-To install frozenclasses, you can use `pip`. Open your terminal and run:
+To install ``frozenclasses``, you can use ``pip``. Open your terminal and run:
 
 .. code-block:: bash
 
@@ -19,12 +24,14 @@ This project is licensed under the MIT License.
 Links
 -----
 
+* `Documentation <https://pypi.org/project/frozenclasses>`_
 * `Download <https://pypi.org/project/frozenclasses/#files>`_
 * `Source <https://github.com/johannes-programming/frozenclasses>`_
 
 Credits
 -------
-- Author: Johannes
-- Email: johannes-programming@posteo.org
 
-Thank you for using frozenclasses!
+* Author: Johannes
+* Email: `johannes-programming@mailfence.com <mailto:johannes-programming@mailfence.com>`_
+
+Thank you for using ``frozenclasses``!

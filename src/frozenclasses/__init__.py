@@ -1,6 +1,7 @@
 from collections import namedtuple
 
-__all__ = ['frozenclass']
+__all__ = ["frozenclass"]
+
 
 class _Frozen:
     def __eq__(self, other) -> bool:
@@ -8,20 +9,25 @@ class _Frozen:
         if type(other) is not cls:
             return False
         return self._data == other._data
+
     def __hash__(self) -> int:
         return self._data.__hash__()
+
     def __ne__(self, other) -> bool:
         return not self.__eq__(other)
+
     def _init(self, **kwargs):
         cls = type(self)
         self._data = cls._Data(**kwargs)
 
+
 class FGet:
     def __init__(self, name):
         name = str(name)
-        if name[0] == '_':
+        if name[0] == "_":
             raise ValueError(name)
         self.__name__ = name
+
     def __call__(self, obj):
         return getattr(obj._data, self.__name__)
 
@@ -29,7 +35,7 @@ class FGet:
 def frozenclass(arg, field_names=[]):
     field_names = list(field_names)
     for field_name in field_names:
-        if field_name.startswith('_'):
+        if field_name.startswith("_"):
             raise ValueError
     if type(arg) is str:
         typename = arg
@@ -38,7 +44,7 @@ def frozenclass(arg, field_names=[]):
         typename = arg.__name__
         baseclasses = (arg,)
     _Data = namedtuple(
-        typename='_Data',
+        typename="_Data",
         field_names=list(field_names),
     )
     members = dict(
@@ -58,4 +64,3 @@ def frozenclass(arg, field_names=[]):
         members,
     )
     return ans
-    
